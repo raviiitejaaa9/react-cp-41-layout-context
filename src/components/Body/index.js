@@ -1,4 +1,5 @@
 // Write your code here
+import ConfigurationContext from '../../context/ConfigurationContext'
 import './index.css'
 
 const Body = () => {
@@ -17,24 +18,31 @@ const Body = () => {
   const rightNav = () => (
     <div className="each-sec">
       <h1> Right Navbar Menu </h1>
-      <div> Add 1 </div>
-      <div> Add 2 </div>
+      <div> Ad 1 </div>
+      <div> Ad 2 </div>
     </div>
   )
 
   const content = () => (
     <div className="each-sec content-sec ">
       <h1> Content </h1>
-      <p>Some content . What are you doing? How are you doing. Are you good.</p>
+      <p>
+        Lorem ipsum Some content . What are you doing? How are you doing. Are
+        you good.
+      </p>
     </div>
   )
 
   return (
-    <div className="body-sec">
-      {leftNav()}
-      {content()}
-      {rightNav()}
-    </div>
+    <ConfigurationContext.Consumer>
+      {value => (
+        <div className="body-sec">
+          {value.showLeftNavbar && leftNav()}
+          {value.showContent && content()}
+          {value.showRightNavbar && rightNav()}
+        </div>
+      )}
+    </ConfigurationContext.Consumer>
   )
 }
 
