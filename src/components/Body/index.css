@@ -1,0 +1,17 @@
+/* Write your CSS here */
+.body-sec {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.each-sec {
+  width: 33.3%;
+  padding: 10%;
+  background-color: #e2e8f0;
+}
+
+.content-sec {
+  background-color: #ffffff;
+}
